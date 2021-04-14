@@ -8,7 +8,7 @@ public class ProxyBeanHolder {
     /**
      * 通知类名
      */
-    private volatile String className;
+    private volatile String clazzName;
     /**
      * 通知方法名
      */
@@ -18,12 +18,12 @@ public class ProxyBeanHolder {
      */
     private volatile String annotationName;
 
-    public String getClassName() {
-        return className;
+    public String getClazzName() {
+        return clazzName;
     }
 
-    public void setClassName(String className) {
-        this.className = className;
+    public void setClazzName(String clazzName) {
+        this.clazzName = clazzName;
     }
 
     public String getMethodName() {

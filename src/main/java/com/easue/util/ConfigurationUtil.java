@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class ConfigurationUtil {
     /**
-     * aop 标识注解类
+     * aop 标识注解类 = @AspectJ
      */
     public static final String AOP_POINT_ANNOTATION = "com.easue.annotation.AopJ";
     /**

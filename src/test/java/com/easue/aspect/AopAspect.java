@@ -8,14 +8,14 @@ import org.springframework.stereotype.Component;
 
 @AopJ
 @Component
-public class TestAop {
+public class AopAspect {
     @BeforeEasue("com.easue.dao")
     public void testBefore(){
         System.out.println("before   ------------------  测试成功！");
     }
     @AfterEasue("com.easue.dao")
     public void testAfter(){
-        System.out.println("after   ------------------  测试成功！");
+        System.out.println("after     ------------------  测试成功！");
     }
     @AroundEasue("com.easue.dao")
     public void testAround(){

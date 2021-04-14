@@ -50,7 +50,7 @@ public class CustomizedProxyInterceptor implements MethodInterceptor {
      * @param proxyBeanHolder
      */
     private void doProxy(ProxyBeanHolder proxyBeanHolder){
-        String className = proxyBeanHolder.getClassName();
+        String className = proxyBeanHolder.getClazzName();
         String methodName = proxyBeanHolder.getMethodName();
         Object clazz = null;
         try {
