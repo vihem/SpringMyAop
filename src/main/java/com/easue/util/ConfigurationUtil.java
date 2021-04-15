@@ -27,7 +27,9 @@ public class ConfigurationUtil {
      */
     public static final String AROUND = "com.easue.annotation.AroundEasue";
     /**
-     * 存放需代理的全部目标对象类
+     * 存放需代理的全部目标对象类（保存带有@Repository的类）
+     * 保存格式：
+     *      {com.easue.dao.IndexDao=[com.easue.holder.ProxyBeanHolder@6166e06f, com.easue.holder.ProxyBeanHolder@49e202ad, com.easue.holder.ProxyBeanHolder@1c72da34]}
      */
     public static volatile Map<String, List<ProxyBeanHolder>> clazzProxyBeanHolder = new ConcurrentHashMap<>();
 }

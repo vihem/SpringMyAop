@@ -24,6 +24,8 @@ import java.util.Vector;
  * 首先实现 BeanFactoryPostProcessor ，保证其 是在对所有的bean完成扫描后，在bean的实例化之前执行，
  * 然后scan出所有的目标对象，
  * 然后建立起目标对象和通知对象的关联关系，然后放入我们的Map中
+ *
+ * 调用类CustomizedAopImportSelector时自动调用此类。
  */
 @Component
 public class RegisterBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
@@ -99,6 +101,7 @@ public class RegisterBeanFactoryPostProcessor implements BeanFactoryPostProcesso
                     }
                 }
             }
+            System.out.println("|||----->ConfigurationUtil.clazzProxyBeanHolder: " + ConfigurationUtil.clazzProxyBeanHolder);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -159,7 +162,10 @@ public class RegisterBeanFactoryPostProcessor implements BeanFactoryPostProcesso
                     if (proxyBeanHolderList==null) {
                         proxyBeanHolderList = new Vector<>();
                     }
+                    // 保存
                     proxyBeanHolderList.add(proxyBeanHolder);
+                    // 最终clazzProxyBeanHolder只有一个： com.easue.dao.IndexDao
+                    // {com.easue.dao.IndexDao=[com.easue.holder.ProxyBeanHolder@71248c21, com.easue.holder.ProxyBeanHolder@442675e1, com.easue.holder.ProxyBeanHolder@6166e06f]}
                     ConfigurationUtil.clazzProxyBeanHolder.put(targetClass,proxyBeanHolderList);
                 }
             }

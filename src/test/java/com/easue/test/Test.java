@@ -10,7 +10,6 @@ public class Test {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         context.getBean(IndexDao.class).query();
         context.getBean(IndexDao.class).query2();
-
     }
     @org.junit.Test
     public void uploadFile() throws Exception {
